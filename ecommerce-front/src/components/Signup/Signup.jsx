@@ -11,20 +11,20 @@ function Signup() {
   return (
     <Container>
         <Row>
-            <Col md={6} className={"login__form--container"}>
+            <Col md={6} className={styles.signup__form__container}>
                 <Form className={styles.form} onSubmit={handleSubmit}>
                     <h1>Create an account</h1>
-                    <Form.Group>
+                    <Form.Group className={styles.form__box}>
                         <Form.Label>Email address</Form.Label>
                         <Form.Control type="email" placeholder="enter you email" value={email} required 
                         onchange={(e) => setEmail(e.target.value)}/>
                     </Form.Group>
-                    <Form.Group>
+                    <Form.Group className={styles.form__box}>
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password" placeholder="enter you password" value={password} required 
                         onchange={(e) => setPassword(e.target.value)}/>
                     </Form.Group>
-                    <Form.Group>
+                    <Form.Group className={styles.form__box}>
                         <Button type="submit">Sign up</Button>
                     </Form.Group>
                     <p>
