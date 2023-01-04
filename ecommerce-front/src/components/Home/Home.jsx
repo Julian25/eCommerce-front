@@ -1,6 +1,11 @@
-import React from 'react'
-import styles from './home.module.css'
-import {Link} from 'react-router-dom'
+import React from 'react';
+import styles from './home.module.css';
+import categories from '../../categories';
+import {Link} from 'react-router-dom';
+import {Col, Row} from 'react-bootstrap';
+import {LinkContainer} from 'react-router-bootstrap';
+
+
 
 function Home() {
   return (
@@ -21,6 +26,17 @@ function Home() {
       </div>
       <div className={styles.recent_products_container && styles.container}>
         <h2>Categories</h2>
+        <Row>
+          {categories.map((category) => (
+            <LinkContainer to={`/category/${category.name.toLocaleLowerCase()}`}>
+              <Col md={4}>
+                <div style= {{backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${category.img})`, gap: "10px"}} className={styles.category_style}>
+                  {category.name}
+                </div>
+              </Col>
+            </LinkContainer>
+          ))}
+        </Row>
       </div>
     </div>
   )
