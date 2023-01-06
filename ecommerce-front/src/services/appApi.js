@@ -4,11 +4,11 @@ import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 
 export const appApi = createApi({
     reducePath: 'appApi',
-    baseQuery: fetchBaseQuery({baseUrl: 'http:://localhost:8080'}),
+    baseQuery: fetchBaseQuery({baseUrl: "http://localhost:8080"}),
     endpoints: (builder) => ({
         signup: builder.mutation({
             query: (user) => ({
-                url: '/users/signup',
+                url: "/users/signup",
                 method: 'POST',
                 body: user,
             })
