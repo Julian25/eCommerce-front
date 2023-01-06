@@ -4,9 +4,8 @@ import userSlice from './features/userSlice';
 import appApi from './services/appApi';
 import storage from 'redux-persist/lib/storage';
 import { combineReducers } from 'redux';
-import { persistReducers } from 'redux-persist';
+import { persistReducer } from 'redux-persist';
 import thunk from 'redux-thunk';
-import persistReducer from 'redux-persist/es/persistReducer';
 
 //reducers 
 

@@ -20,7 +20,7 @@ function Signup() {
             <Col md={6} className={styles.signup__form__container}>
                 <Form className={styles.form} onSubmit={handleSignup}>
                     <h1>Create an account</h1>
-                    {isError && <Alert variant='danger'>error.data</Alert>}
+                    {isError && <Alert variant='danger'>{error.data}</Alert>}
                     <Form.Group className={styles.form__box}>
                         <Form.Label>Name</Form.Label>
                         <Form.Control type="text" placeholder="enter your name" value={name} required 
