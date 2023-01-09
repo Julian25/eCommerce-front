@@ -8,3 +8,8 @@
     width: 20rem;
     margin: 10px;
 }
+
+.product__preview__img {
+    height: 150px;
+    object-fit: cover !important;
+}

@@ -1,7 +1,7 @@
 import React from 'react'
 import { LinkContainer } from 'react-router-bootstrap';
 import { Card, Badge } from 'react-bootstrap'
-import styles from './ProductPreview'
+import styles from './ProductPreview.module.css'
 
 function ProductPreview({ _id, category, name, pictures }) {
   return (
