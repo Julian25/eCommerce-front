@@ -1,0 +1,10 @@
+.product__link {
+    cursor: pointer;
+    width: 13rem;
+    margin: 10px;
+}
+
+.product__card {
+    width: 20rem;
+    margin: 10px;
+}

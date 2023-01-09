@@ -1,19 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './home.module.css';
 import categories from '../../categories';
 import {Link} from 'react-router-dom';
 import {Col, Row} from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
+import axios from '../../axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateProducts } from '../../features/productSlice';
+import ProductPreview from '../ProductPreview/ProductPreview';
 
 
 
 function Home() {
+  const dispatch = useDispatch();
+  const products = useSelector( state => state.products);
+  const lastProducts = products.slice(0,8);
+  useEffect(() => {
+    axios.get("/products").then(({ data }) => dispatch(updateProducts(data)));
+  }, []);
+
   return (
     <div>
       <img src="https://res.cloudinary.com/learn-code-10/image/upload/v1653947013/yqajnhqf7usk56zkwqi5.png" 
       alt="home banner" className={styles.home__banner}/>
       <div>
         <h2>Last products</h2>
+        {lastProducts.map((product) => (
+          <ProductPreview {...product}/>
+        ))}
         <div>
           <Link to='/category/all' className={styles.all__link}>
             See all {'>>'}
