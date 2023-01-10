@@ -2,10 +2,11 @@
     min-height: 90vh;
 }
 
-.category-banner-container {
+.category__banner__container {
     height: 200px;
     background-color: #182e39;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;

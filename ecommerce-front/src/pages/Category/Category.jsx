@@ -37,11 +37,11 @@ function Category() {
 
   return (
     <div className={styles.category__container}>
-      <div className={`pt-3 ${category}__banner__container category__banner__container`}>
+      <div className={`pt-3 ${category}__banner__container ${styles.category__banner__container}`}>
         <h1 className={styles.text__center}>{category.charAt(0).toUpperCase() + category.slice(1)}</h1>
-        <div className={styles.filter__container &"pt-4 pb-b4" }>
-          <input type="search" placeholder="search" onChange={(e) => setSearchTerm(e.target.value)}/>
-        </div>
+      </div>
+      <div className={`${styles.filter__container} pt-4 pb-b4` }>
+        <input type="search" placeholder="search" onChange={(e) => setSearchTerm(e.target.value)}/>
       </div>
       {products.length === 0 ? (
         <h2>No products to show</h2>

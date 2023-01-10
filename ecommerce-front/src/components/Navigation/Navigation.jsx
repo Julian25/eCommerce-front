@@ -24,7 +24,19 @@ function Navigation() {
         <Nav className="ms-auto">
         {!user && (
                   <LinkContainer to="/login">
-                            <Nav.Link>Login</Nav.Link>
+                    <Nav.Link>Login</Nav.Link>
+                  </LinkContainer>
+        )}
+        {user && !user.isAdmin && (
+                  <LinkContainer to="/cart">
+                    <Nav.Link>
+                      <i className='fas fa-shopping-cart'></i>
+                      {user?.cart.count > 0 && (
+                        <span className='badge badge-warning'>
+                          {user.cart.count}
+                        </span>
+                      )}
+                    </Nav.Link>
                   </LinkContainer>
         )}
         {user && (
