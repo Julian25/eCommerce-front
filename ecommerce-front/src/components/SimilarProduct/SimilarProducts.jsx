@@ -1,9 +1,9 @@
 import React from 'react'
 import { LinkContainer } from 'react-router-bootstrap';
 import { Card, Badge } from 'react-bootstrap'
-import styles from './ProductPreview.module.css'
+import styles from './similarProduct.module.css'
 
-function ProductPreview({ _id, category, name, pictures }) {
+function SimilarProduct({ _id, category, name, pictures }) {
   return (
     <LinkContainer to={`/product/${_id}`} className={styles.product__link} >
       <Card className={styles.product__card}>
@@ -19,4 +19,4 @@ function ProductPreview({ _id, category, name, pictures }) {
   )
 }
 
-export default ProductPreview;
+export default SimilarProduct;

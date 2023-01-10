@@ -7,6 +7,7 @@ import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
 import { useSelector } from 'react-redux';
 import NewProducts from './pages/New products/NewProducts';
+import ProductPage from './pages/Product page/ProductPage';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
               <Route path = '/signup' element= {<Signup/>}/>
             </>
           )}
+          <Route path='/product/:id' element= {<ProductPage />}/>
           <Route path='/new-product' element= {<NewProducts/>}/>
           <Route path='*' element= {<Home/>}/>
         </Routes>

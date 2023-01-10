@@ -1,0 +1,33 @@
+.loading__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.product__carousel__image {
+    max-width: 100%;
+    object-fit: cover;
+    max-height: 500px ;
+}
+
+.alice-carousel__prev-btn,
+.alice-carousel__next-btn {
+    display: none !important;
+}
+
+.button__group {
+    width: 90%;
+}
+
+.form__select {
+    width: 40%;
+    border-radius: 0;
+}
+
+.carousel__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
