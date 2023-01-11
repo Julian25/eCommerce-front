@@ -30,9 +30,9 @@ function Navigation() {
         {user && !user.isAdmin && (
                   <LinkContainer to="/cart">
                     <Nav.Link>
-                      <i className='fas fa-shopping-cart'></i>
+                      <i className={`fas fa-shopping-cart ${styles.shopping}`}></i>
                       {user?.cart.count > 0 && (
-                        <span className='badge badge-warning'>
+                        <span className={`${styles.badge}  ${styles.badge__warning} ${styles.cart__count}`} id="cartcount">
                           {user.cart.count}
                         </span>
                       )}

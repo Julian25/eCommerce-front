@@ -1,3 +1,31 @@
 .cart___container {
     min-height: 95vh;
 }
+.icon__remove {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.product__img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.quantity__button {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.minus {
+    margin-right: 5px;
+}
+
+.plus {
+    margin-left: 5px;
+}
+
+.cart__table {
+    max-height: 70vh;
+    overflow: scroll;
+}

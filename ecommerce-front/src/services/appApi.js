@@ -28,36 +28,36 @@ export const appApi = createApi({
             })
         }),
 
-        addToCar: builder.mutation({
+        addToCart: builder.mutation({
             query: (cartInfo) => ({
                 url: "/products/add-to-cart",
                 body: cartInfo,
-                method: "POST"
-            })
+                method: "POST",
+            }),
         }),
          
         removeFromCart: builder.mutation({
             query: (body) => ({
                 url: "/products/remove-from-cart",
                 body,
-                method: "DELETE"
-            })
+                method: "DELETE",
+            }),
         }),
 
         increaseCartProduct: builder.mutation({
             query: (body) => ({
                 url: "/products/increase-cart",
                 body,
-                method: "POST"
-            })
+                method: "POST",
+            }),
         }),
 
         decreaseCartProduct: builder.mutation({
             query: (body) => ({
                 url: "/products/decrease-cart",
                 body,
-                method: "POST"
-            })
+                method: "POST",
+            }),
         }),
     }),
 })

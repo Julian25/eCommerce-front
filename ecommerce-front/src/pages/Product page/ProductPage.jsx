@@ -10,13 +10,16 @@ import styles from './productPage.module.css';
 import Loading from '../../components/Loading/Loading';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useAddToCartMutation } from '../../services/appApi';
+import ToastMessage from '../../components/ToastMessage/ToastMessage';
 
 function ProductPage() {
     const {id} = useParams();
     const user = useSelector((state) => state.user);
     const [product, setProduct] = useState(null);
     const [similar, setSimilar] = useState(null);
-    const [addToCart, {isSuccess}] = useAddToCartMutation();
+    const [addToCart, { isSuccess }] = useAddToCartMutation();
+
+
 
     const handleDragStart = (e) => e.preventDefault();
     useEffect(() =>{
@@ -69,8 +72,8 @@ function ProductPage() {
                             <option value="4">4</option>
                             <option value="5">5</option>
                         </Form.Select>
-                        <Button size="lg" onClick={() => addToCart({userId: user._id, productId: id, price: product.price, image: product.pictures[0].url})} >
-                            Add to cart
+                        <Button size="lg" onClick={() => addToCart({ userId: user._id, productId: id, price: product.price, image: product.pictures[0].url })}>
+                                Add to cart
                         </Button>
                     </ButtonGroup>
                 )}
@@ -81,6 +84,7 @@ function ProductPage() {
                         </Button>
                     </LinkContainer>
                 )}
+                {isSuccess && <ToastMessage bg="info" title="added to cart" body={`${product.name} is in your cart`}/>}
             </Col>
         </Row>
         <dvi className="my-4">
