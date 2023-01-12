@@ -8,7 +8,9 @@ import {
   useRemoveFromCartMutation 
 } from '../../services/appApi';
 import { loadStripe } from '@stripe/stripe-js';
-import { Elements } from '@stripe/react-stripe-js'
+import { Elements } from '@stripe/react-stripe-js';
+import CheckOutForm from '../../components/CheckOutForm/CheckOutForm';
+import { useState } from 'react';
 
 const stripePromise = loadStripe('pk_test_51MPD8dKBwGKOp0r6AfPVovlvmJCH9jjkt7a9IoZgbP1cd3xkIqoMBTTiFquLXW8xGIGhevTpfOe83JWza8sjTlzl00KJK7QmcY');
 
@@ -20,7 +22,7 @@ function Cart() {
     let cart = products.filter((product) => userCartObj[product._id] != null);
     const [increaseCart] = useIncreaseCartProductMutation();
     const [decreaseCart] = useDecreaseCartProductMutation();
-    const [removeFromCart, { isLoading }] = useRemoveFromCartMutation()
+    const [removeFromCart, { isLoading }] = useRemoveFromCartMutation();
 
   return (
     <Container className={styles.cart__container}>
@@ -30,7 +32,9 @@ function Cart() {
           {cart.length == 0 ? (
               <Alert variant='info'>Shopping cart is empty. Add products to your cart</Alert>
           ) : (
-            <Elements stripe={stripePromise}></Elements>
+            <Elements stripe={stripePromise}>
+              <CheckOutForm />
+            </Elements>
             ) }
         </Col>
         <Col md={5}>
